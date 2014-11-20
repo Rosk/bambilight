@@ -140,8 +140,12 @@ void bambiSwitch(int r, int g, int b, int m, int t){
  else if(m==7){
    Breath(strip.Color(r, g, b), strip.Color(g, b, r), t, 255);
  }
- else if(m==8){}
- else if(m==9){}
+ else if(m==8){
+   // free slot - make more effects
+ }
+ else if(m==9){
+   // free slot - make more effects 
+ }
 }
 
 
