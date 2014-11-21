@@ -1,6 +1,6 @@
 /*
  * BAMBI-LIGHT
- * Bamibi-Light ist ein autonomer Ambilight-Clone
+ * Bambi-Light ist ein Protokoll für Pushnachrichten aus Licht
  */
  
 #include <Adafruit_NeoPixel.h>

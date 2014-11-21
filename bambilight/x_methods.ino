@@ -1,4 +1,4 @@
-// welcome Greeter
+// Welcome Greeter
 void boardReady()
 {
   Serial.println("Zzzzzzz");  
