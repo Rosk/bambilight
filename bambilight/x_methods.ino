@@ -9,26 +9,25 @@ void boardReady()
 }
 
 
-// is this method in use, yet?
 // Serial Single-Char Reader
 char Comp(char* This) {
     while (Serial.available() > 0) // Don't read unless there you know there is data
     {
-        if(index < 9) // One less than the size of the array
+        if(index < (SERIALCNT-1)) // One less than the size of the array
         {
-            inChar = Serial.read(); // Read a character
-            inData[index] = inChar; // Store it
-            index++; // Increment where to write next
-            inData[index] = '\0'; // Null terminate the string
+            inChar = Serial.read(); // read a character
+            inData[index] = inChar; // store it in inData
+            index++; // increment index
+            inData[index] = '\0'; // Null - terminate the string
         }
     }
 
     if (strcmp(inData,This)  == 0) 
     {
-        for (int i=0;i<9;i++) {
-            inData[i]=0;
+        for (int i=0; i < (SERIALCNT-1); i++) {
+            inData[i] = 0;
         }
-        index=0;
+        index = 0;
         return(0);
     }
     else 
@@ -36,7 +35,3 @@ char Comp(char* This) {
         return(1);
     }
 }
-
-
-
-

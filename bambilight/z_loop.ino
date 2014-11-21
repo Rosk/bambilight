@@ -84,7 +84,7 @@ void loop()
       m = mode.toInt(); // m is now the switch for the playmode trigger
  
       // MODE START
-      // run cyclemodes here
+      // run switch here
       bambiSwitch(f1,f2,f3,m,100);      
       delay(100);
       
@@ -92,6 +92,7 @@ void loop()
       index = 0;         // reset index
       mode  = "";        // reset mode
       isrunning = false; // runcycle off
+      Serial.write("READY");
     }       
 
   }  

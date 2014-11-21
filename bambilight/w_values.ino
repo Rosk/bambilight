@@ -1,18 +1,14 @@
-// Timer Variables
-int timer = 200;
-
 // Variables - will change:
 int buttonPushCounter = 0;  // counter for the number of button presses
 int buttonState = 0;        // current state of the button
 int lastButtonState = 0;    // previous state of the button
 
-// Variables - will not change:
 char inData[9];             // Allocate some space for the serial string
-char inChar=-1;             // Where to store the character read
+char inChar = -1;           // Where to store the character read
 byte index = 0;             // Index into array; where to store the character
 
-// define RGB LED Variables
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(24, PIN, NEO_GRB + NEO_KHZ800);
+// Strip
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(LEDCOUNT, PIN, NEO_GRB + NEO_KHZ800);
 
 // define Colornames
 uint32_t red = strip.Color(255, 0, 0);
