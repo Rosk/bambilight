@@ -1,4 +1,4 @@
-Bambilight - a little reactional light
+Bambilight - Neopixel Home Light
 =====
 
 # 01. FUNCTIONS
