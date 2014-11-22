@@ -14,6 +14,12 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(LEDCOUNT, PIN, NEO_GRB + NEO_KHZ800)
 uint32_t red = strip.Color(255, 0, 0);
 uint32_t magenta = strip.Color(255, 0, 255);
 uint32_t green = strip.Color(0, 255, 0);
-uint32_t blue = strip.Color(0, 255, 255);
+uint32_t blue = strip.Color(0, 0, 255);
+
+// Blues
+uint32_t midnightblue   = strip.Color(25, 25, 112);
+uint32_t navy           = strip.Color(0, 0, 128);
+uint32_t cornflower     = strip.Color(100, 149, 237);
+uint32_t slateblue      = strip.Color(106, 90, 205);
 // ... make more colors!
 

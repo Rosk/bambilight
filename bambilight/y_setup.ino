@@ -12,6 +12,7 @@ void setup()
   {
     ;                      // wait for serial port to connect. Needed for Leonardo only. 
                            // Else there is no serial output...
+                           // http://arduino.cc/en/Guide/ArduinoLeonardoMicro?from=Guide.ArduinoLeonardo
   }
   
   // now send to Serial

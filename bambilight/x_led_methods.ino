@@ -67,14 +67,14 @@ void rainbowCycle(uint8_t wait) {
 void theaterChase(uint32_t c, uint8_t wait) {
   for (int j=0; j<10; j++) {  //do 10 cycles of chasing
     for (int q=0; q < 3; q++) {
-      for (int i=0; i < strip.numPixels(); i=i+3) {
+      for (int i=0; i < strip.numPixels(); i=i+4) {
         strip.setPixelColor(i+q, c);    //turn every third pixel on
       }
       strip.show();
      
       delay(wait);
      
-      for (int i=0; i < strip.numPixels(); i=i+3) {
+      for (int i=0; i < strip.numPixels(); i=i+4) {
         strip.setPixelColor(i+q, 0);        //turn every third pixel off
       }
     }
@@ -161,24 +161,80 @@ void dualBurst(uint32_t c, uint32_t c2, uint8_t wait) {
 }
 
 // Method 8 - Breath  
-void Breath(uint32_t c1, uint32_t c2, uint8_t wait, uint8_t count) {
+void Breath(uint32_t c1, uint32_t c2, uint32_t c3, uint8_t wait, uint8_t count) {
+
  
-  for(int ct=0; ct < count; ct = ct+1){
- 
-    for (int i=0; i < 5; i = i+1) 
+  for(int ct=0; ct < (count); ct = ct+1){
+    for (int i=0; i < (8); i = i+1) 
     {
-      strip.setPixelColor(i, c1);    //turn every second pixel on
-      strip.setBrightness(255-ct);      
-      strip.show();  
-      delay(10);  
-  }  
-    for (int i=10; i < strip.numPixels()-5; i=i+1) 
-    {
-      strip.setPixelColor(i, c2);    //turn every second pixel on
+      strip.setPixelColor(i, c1);    //turn the first eight pixel on
       strip.setBrightness(0+ct);      
-      strip.show();
-      delay(10);  
-  }     
-    delay(wait);  
+      delay(1);  
+    }  
+    for (int i=8; i < strip.numPixels()-8; i=i+1) 
+    {
+      strip.setPixelColor(i, c2);    //turn the second eight pixel on
+      strip.setBrightness(255-ct);      
+      delay(1);  
+    }     
+    for (int i=16; i < strip.numPixels(); i=i+1) 
+    {
+      strip.setPixelColor(i, c3);    //turn the third eight pixel on
+      strip.setBrightness(0+ct);      
+      delay(1);  
+    } 
+    strip.show();  
   }  
+ 
+  
+  for(int ct=0; ct < (count); ct = ct+1){
+    for (int i=0; i < (8); i = i+1) 
+    {
+      strip.setPixelColor(i, c1);    //turn the first eight pixel on
+      strip.setBrightness(255-ct);      
+      delay(1);  
+    }  
+    for (int i=8; i < strip.numPixels()-8; i=i+1) 
+    {
+      strip.setPixelColor(i, c2);    //turn the second eight pixel on
+      strip.setBrightness(0+ct);      
+      delay(1);  
+    }     
+    for (int i=16; i < strip.numPixels(); i=i+1) 
+    {
+      strip.setPixelColor(i, c3);    //turn the third eight pixel on
+      strip.setBrightness(255-ct);      
+      delay(1);  
+    } 
+    strip.show();  
+  } 
+
+
+ 
+  
+}
+
+// Method 9 - Static Color Test  for colornames
+void Colortest(){
+     chase(red); // Red
+     chase(green); // Green
+     chase(blue); // Blue
+     chase(magenta); // Moar...
+     chase(cornflower);
+     chase(navy);
+     chase(slateblue);
+     chase(midnightblue);
+}
+
+
+
+
+static void chase(uint32_t c) {
+  for(uint16_t i=0; i<strip.numPixels()+4; i++) 
+  {
+    strip.setPixelColor(i , c); // Draw new pixel
+    strip.setPixelColor(i-4, 0); // Erase pixel a few steps back
+    strip.show();
+    delay(25);
+  }
 }

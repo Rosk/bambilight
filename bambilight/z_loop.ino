@@ -85,7 +85,7 @@ void loop()
  
       // MODE START
       // run switch here
-      bambiSwitch(f1,f2,f3,m,100);      
+      bambiSwitch(f1,f2,f3,m,50);      
       delay(100);
       
       // RESET
@@ -127,6 +127,7 @@ void bambiSwitch(int r, int g, int b, int m, int t){
    rainbow(t);
  }
  else if(m==6){
+   // Wheel test
    Wheel(20);
    delay(50);
    Wheel(40);
@@ -139,10 +140,16 @@ void bambiSwitch(int r, int g, int b, int m, int t){
    delay(50);   
  }
  else if(m==7){
-   Breath(strip.Color(r, g, b), strip.Color(g, b, r), t, 255);
+   // test static colors
+   Breath(midnightblue, magenta, cornflower, t, 255);
+   delay(100);
+   Breath(green, red, blue, t, 255);
+   delay(200);
+   Breath(blue, green, red, t, 255);
+   delay(200);   
  }
  else if(m==8){
-   // free slot - make more effects
+   
  }
  else if(m==9){
    // free slot - make more effects 
